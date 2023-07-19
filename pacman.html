@@ -1,0 +1,154 @@
+
+<html>
+	<head >
+		<style>
+		  html {
+			height: 100%;
+		  }
+		  body {
+			width: 99%;
+			height: 97%;
+		  }
+		  #control_panel {
+			margin-right: 5px;
+			float: left;
+			width: 20%;
+		  }
+		  canvas {
+			display:block;
+			background-color: #f1f1f1;
+		  }
+		  
+		</style>
+		<script>
+			let canvas;
+			let context;
+			
+			let myGradient;
+			//context.fillStyle = '#ff00f0';
+			
+			
+		
+			
+			let x = 0
+			let y = 0
+			let enemyY = 301
+			let enemyX = 501
+			function onKeyDown(e) {
+				console.log(e);
+				if (e.keyCode == 39 || e.keyCode == 68) {
+					x = x + 50;
+				}
+				if (e.keyCode == 37 || e.keyCode == 65) {
+					x = x - 50;
+				}
+				if (e.keyCode == 40 || e.keyCode == 83) {
+					y = y + 50;
+				}
+				if (e.keyCode == 38 || e.keyCode == 87) {
+					y = y - 50;
+				}
+				
+				if (x < 0) {
+					x = canvas.width + x
+				}
+				x = x % canvas.width;
+				console.log(x)
+				if (y < 0) {
+					y = canvas.height + y
+				}
+				y = y % canvas.height;
+				console.log(y)
+				
+				
+				
+			
+				
+			}
+			function init() {
+				canvas = document.getElementById("canvas");
+				canvas.width = window.innerWidth - 10;
+				canvas.height = window.innerHeight - 10;
+				
+				context = canvas.getContext("2d");
+				
+				myGradient = context.createLinearGradient(0, 10, 20,0);
+				myGradient.addColorStop(0, "red");
+				myGradient.addColorStop(1, "red");
+				context.fillStyle = myGradient;
+				
+				canvas.addEventListener("keydown", onKeyDown);
+
+				updateGame();
+			}
+			
+			function updateGame() {
+
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				drawPacman(x,y)
+				//context.beginPath();
+				//context.arc(10 + x  1, 20 + y  1, 10, Math.PI/6,  7/6 * Math.PI);
+				//context.closePath();
+				//context.fill();
+
+				//context.beginPath();
+				//context.arc(10 + x  1, 20 + y  1, 10, Math.PI  5/6,  11/6  Math.PI);
+				//context.closePath();
+				//context.fill();
+				
+				stepEnemy()
+				//for (let i = 0;i < 30; i++){
+					//for (let j = 0;j < 20; j++){
+						//drawPacman(i  50 ,j  50)
+						
+					//}
+				//}
+				drawPacman(enemyX,enemyY)
+				// make infinite loop without freezing
+				setTimeout(updateGame, 1);
+				
+			}
+			
+			
+			function drawPacman(x2,y2) {
+				context.beginPath();
+				context.arc(10 + x2 * 1, 20 + y2 * 1, 10, Math.PI/6,  7/6 * Math.PI);
+				context.closePath();
+				context.fill();
+
+				context.beginPath();
+				context.arc(10 + x2 * 1, 20 + y2 * 1, 10, Math.PI * 5/6,  11/6 * Math.PI);
+				context.closePath();
+				context.fill();
+			}
+			
+			function stepEnemy () {
+				//let rand = Math.floor(Math.random() * 4);
+				if (enemyX < x) {
+					enemyX = enemyX + 5;
+				}
+				if (enemyX > x) {
+					enemyX = enemyX - 5;
+				}
+				if (enemyY < y) {
+					enemyY = enemyY + 5;
+				}
+				if (enemyY > y) {
+					enemyY = enemyY - 5;
+				}
+				//if (rand == 2) {
+					//enemyY = enemyY + 5;
+				//}
+				//if (rand == 3) {
+					//enemyY = enemyY - 5;
+				//}
+			
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<canvas id="canvas" tabindex="1" autofocus></canvas>
+
+	</body>
+</html>
+
