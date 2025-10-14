@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nikolay Pakudin — Senior Ruby / Backend Engineer</title>
+  <!--
+    NOTE FOR OWNER:
+    - Replace the placeholder photo by putting an image file next to this HTML and updating the src of #profile-photo.
+    - All comments are in English by request. Content is in English for job applications.
+  -->
+  <style>
+    :root{
+      --bg:#0b0d10;
+      --card:#12161c;
+      --ink:#eaf0f7;
+      --muted:#a9b3c7;
+      --accent:#68c1ff;
+      --chip:#1a212b;
+      --border:#1f2a35;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;
+      background:radial-gradient(1200px 1200px at 80% -20%, #17202a 0%, var(--bg) 55%);
+      color:var(--ink);
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1050px;margin:40px auto;padding:0 20px}
+    header{
+      display:grid;
+      grid-template-columns:140px 1fr;
+      gap:24px;
+      align-items:center;
+      margin-bottom:28px;
+    }
+    #profile-photo{
+      width:140px;height:140px;border-radius:16px;object-fit:cover;
+      border:1px solid var(--border);background:#0d1218;
+      display:block;
+    }
+    .title h1{margin:0 0 6px;font-size:32px;letter-spacing:.2px}
+    .title p{margin:2px 0;color:var(--muted)}
+    .chipline{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+    .chip{
+      background:var(--chip);
+      border:1px solid var(--border);
+      padding:6px 10px;border-radius:999px;
+      font-size:12px;color:var(--muted);
+      white-space:nowrap;
+    }
+    .grid{
+      display:grid;gap:18px;
+      grid-template-columns:1.2fr .8fr;
+    }
+    section{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px 18px;
+    }
+    h2{
+      margin:0 0 10px;font-size:18px;letter-spacing:.3px;
+    }
+    h3{margin:12px 0 6px;font-size:15px}
+    .meta{color:var(--muted);font-size:13px}
+    ul{margin:6px 0 0 16px;padding:0}
+    li{margin:6px 0}
+    .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+    .tag{background:#0f141a;border:1px solid var(--border);border-radius:8px;padding:4px 8px;font-size:12px;color:var(--muted)}
+    .twocol{
+      display:grid;gap:12px;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+    }
+    .keyline{border-top:1px dashed var(--border);margin:12px 0 0;padding-top:12px}
+    footer{color:var(--muted);text-align:center;margin:18px 0 36px;font-size:12px}
+    /* Print tweaks */
+    @media print{
+      body{background:white;color:black}
+      section,header{break-inside:avoid}
+      a{text-decoration:underline}
+      .wrap{margin:0;max-width:none}
+      .grid{grid-template-columns:1fr 1fr}
+      #profile-photo{border:none}
+    }
+    @media (max-width:860px){
+      .grid{grid-template-columns:1fr;gap:12px}
+      header{grid-template-columns:100px 1fr}
+      #profile-photo{width:100px;height:100px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <!-- Replace "photo.jpg" with your actual photo filename placed next to this HTML file -->
+      <img id="profile-photo" src="photo.jpg" alt="Profile photo of Nikolay Pakudin" />
+      <div class="title">
+        <h1>Nikolay Pakudin</h1>
+        <p>Senior Ruby / Backend Engineer · Node.js · Python · Distributed Systems</p>
+        <p>
+          <a href="mailto:nikolay.pakudin@gmail.com">nikolay.pakudin@gmail.com</a>
+          &nbsp;•&nbsp; <a href="https://github.com/npakudin" target="_blank" rel="noopener">github.com/npakudin</a>
+        </p>
+        <div class="chipline">
+          <span class="chip">Remote · Georgia (GMT+4)</span>
+          <span class="chip">11k RPS systems</span>
+          <span class="chip">Cost ↓ 30% (AWS RDS)</span>
+          <span class="chip">Prod firefighting</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section>
+          <h2>Summary</h2>
+          <p>
+            Backend engineer with 15+ years building and operating high‑load systems (Rails, Node.js, Python).
+            Comfortable with event‑driven architectures, async I/O, Kafka/RabbitMQ, and PostgreSQL tuning.
+            Known for rapid incident response (e.g., fixed a TimescaleDB crash loop within 4 hours by tracing it to an OS‑level cgroup memory cap in Kubernetes).
+          </p>
+        </section>
+
+        <section>
+          <h2>Experience</h2>
+
+          <h3>Fin tech — Ruby on Rails Developer</h3>
+          <div class="meta">2023 — present</div>
+          <ul>
+            <li>Built and maintained services with Ruby on Rails (dry‑rb), Kafka, RabbitMQ, PostgreSQL, Kubernetes (k8s), Helm.</li>
+            <li>Delivered 11k RPS on RoR + Postgres + Kafka; improved observability and stability.</li>
+          </ul>
+
+          <h3>Smartlead — AI Developer</h3>
+          <div class="meta">2024 — 2025</div>
+          <ul>
+            <li>Shipped a WhatsApp chatbot for internal Q&A (Node.js, React, OpenAI API, LangGraph).</li>
+            <li>Designed AI workflow orchestration; deployed on Kubernetes with queues for scaling.</li>
+          </ul>
+
+          <h3>Aldrin — Full‑stack Developer</h3>
+          <div class="meta">2022 — 2023</div>
+          <ul>
+            <li>Crypto exchange: React, Node.js, TypeScript, TimescaleDB, Kubernetes.</li>
+            <li>Time‑series heavy workloads; “hardcore optimizations” under production load.</li>
+          </ul>
+
+          <h3>Out of Office — Elixir Developer</h3>
+          <div class="meta">2023 — 2024</div>
+          <ul>
+            <li>Travel app: Elixir, AWS RDS Postgres, Kubernetes.</li>
+            <li>Reduced AWS RDS spend by ~30% via query/index tuning and container limits review.</li>
+          </ul>
+
+          <h3>Hill30 — Full‑stack / Systems Engineer</h3>
+          <div class="meta">2011 — 2022</div>
+          <ul>
+            <li><b>Swingbyte</b> — Golf training app + sync server (Android, RoR, PostgreSQL, S3).</li>
+            <li><b>GemCMS</b> — CMS (React, Elixir, PostgreSQL).</li>
+            <li><b>NetAnalyzer</b> — DPI analyzer (C/C++, Linux, .NET Core): filtered 99.9% of packets at C++ level; streamed ~0.1% into Kafka and processed with Spark; sustained 10 Gbit/s.</li>
+          </ul>
+
+          <h3>Scout — C# Developer</h3>
+          <div class="meta">2010 — 2011</div>
+          <ul>
+            <li>ScoutSystem — GPS tracking (C#, MS SQL, high‑performance TCP).</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Selected Projects & Wins</h2>
+          <div class="twocol">
+            <div>
+              <h3>Fintech KYC Platform</h3>
+              <div class="meta">Rails · Python · Kafka · PostgreSQL · K8s</div>
+              <ul>
+                <li>Split a monolith into microservices; Kafka event flows, JWT with Vault key rotation.</li>
+                <li>Automated onboarding — manual setup time went from a full day to near zero.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>AI Assistant (WhatsApp)</h3>
+              <div class="meta">FastAPI · LangChain · RabbitMQ · K8s</div>
+              <ul>
+                <li>Answered internal questions from docs; async workers for load spikes.</li>
+                <li>Learned edge cases of async I/O under real traffic.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Infra Tools</h3>
+              <div class="meta">Go · asyncio · gRPC</div>
+              <ul>
+                <li>Go daemons for metrics/backups; optimized aiohttp server (~2M req/day).</li>
+                <li>Added graceful shutdowns and retries to minimize deploy incidents.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>High‑Load DPI Analyzer</h3>
+              <div class="meta">C++ · PF_RING · gRPC</div>
+              <ul>
+                <li>10+ Gbit/s live traffic; kernel‑level filtering; streaming to Kafka/Spark.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="keyline">
+            <ul>
+              <li>Fixed TimescaleDB crash loops in under 4 hours (root cause: cgroup memory limit).</li>
+              <li>Cut AWS costs by ~30% via DB/infra tuning.</li>
+              <li>Mentored juniors; two moved from QA to backend roles.</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <aside>
+        <section>
+          <h2>Core Skills</h2>
+          <div class="stack">
+            <span class="tag">Ruby on Rails</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Python</span>
+            <span class="tag">Go</span>
+            <span class="tag">Kafka / RabbitMQ</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">TimescaleDB</span>
+            <span class="tag">Redis</span>
+            <span class="tag">gRPC</span>
+            <span class="tag">REST / GraphQL</span>
+            <span class="tag">Kubernetes / Helm</span>
+            <span class="tag">AWS (S3, EC2, RDS)</span>
+            <span class="tag">CI/CD (GitLab/GitHub/Jenkins)</span>
+            <span class="tag">Datadog · ELK</span>
+          </div>
+        </section>
+
+        <section>
+          <h2>AI & Tools</h2>
+          <ul>
+            <li>Cursor IDE, LangGraph; WhatsApp chatbot (OpenAI API).</li>
+            <li>Linux daemons, RPM packaging.</li>
+            <li>Monitoring: Datadog, Elasticsearch, Kibana, APM.</li>
+            <li>TDD; Agile (Scrum, Kanban).</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Time‑Series & Performance</h2>
+          <ul>
+            <li>Sensor/regular sources, partitions, sharding, caching.</li>
+            <li>SQL/index tuning; queue back‑pressure; async pipelines.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Education</h2>
+          <p>
+            M.Sc. in Computer Science — Academical University of the Russian Academy of Sciences (2010).<br />
+            Focus: distributed systems & algorithms. Thesis: real‑time analytics engine inspired by Google Sawzall.
+          </p>
+        </section>
+      </aside>
+    </div>
+
+    <footer>
+      <!-- Small footer to keep the page self-contained -->
+      © Nikolay Pakudin — Resume
+    </footer>
+  </div>
+</body>
+</html>
